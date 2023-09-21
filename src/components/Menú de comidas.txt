@@ -1,0 +1,85 @@
+<div class="information-content container">
+
+
+            <div class="card-1">
+                <img src="images/Tacos.png" alt="">
+                <h3>Tacos</h3>
+                <p>Orden de 3 tacos </p>
+                </p>$3.99</p>
+                <a href="comidas.html" class="btn-1">Seleccionar</a>
+            </div>
+            <br><br>
+            <div class="card-1">
+                <img src="images/Pizza.jpg" alt="">
+                <h3>Pizza</h3>
+                <p>Porción de pizza </p>
+                </p>$1.25</p>
+                <a href="#" class="btn-1">Seleccionar</a>
+            </div>
+            <br><br>
+            <div class="card-1" >
+                <img src="images/Hamburguesa1.png" alt="" >
+                <h3>Hamburguesa</h3>
+                <p>Hamburguesa sencilla</p>
+                </p>$2.50</p>
+                <a href="comidas.html" class="btn-1">Seleccionar</a>
+            </div>
+            <br><br>
+            <div class="card-1">
+                <img src="images/PolloFrito.png" alt="">
+                <h3>Pollo frito</h3>
+                <p>2 piezas de pollo</p>
+                </p>$2.75</p>
+                <a href="#" class="btn-1">Seleccionar</a>
+            </div>
+            <br><br>
+
+
+        </div>
+        <br>
+        <br>
+
+        <div class="information-content container">
+
+
+            <<div class="card-1">
+                <img src="images/papas Fritas.png" alt="">
+                <h3>Papas</h3>
+                <p>Orden de papas fritas</p>
+                </p>$1.25</p>
+                <a href="comidas.html" class="btn-1">Seleccionar</a>
+            </div>
+            <br><br>
+            <div class="card-1">
+                <img src="images/nachos.png" alt="">
+                <h3>Nachos</h3>
+                <p>Nachos con queso</p>
+                </p>$2.50</p>
+                <a href="#" class="btn-1">Seleccionar</a>
+            </div>
+            <br><br>
+            <div class="card-1">
+                <img src="images/refresco.jpg" alt="">
+                <h3>Refrescos</h3>
+                <p>Refresco natural </p>
+                </p>$2.00</p>
+                <a href="comidas.html" class="btn-1">Seleccionar</a>
+            </div>
+            <br><br>
+            <div class="card-1">
+                <img src="images/gaseosa.jpg" alt="">
+                <h3>Gaseosa</h3>
+                <p>Gaseosa de sabores</p>
+                </p>$1.75</p>
+                <a href="#" class="btn-1">Seleccionar</a>
+            </div>
+
+
+        </div>
+        <br>
+        <br>
+
+
+
+        </div>
+    </section>
