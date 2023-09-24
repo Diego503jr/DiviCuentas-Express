@@ -1,13 +1,61 @@
 import React from "react";
-import logotipo from "../assets/logopng.png";
+import { useNavigate } from "react-router-dom";
+import logotipo from "../assets/v1horizontal.png";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   return (
-    <nav className="col-sm-12 navbar navbar-expand-lg sticky-top bg-warning">
+    <nav
+      style={{ backgroundColor: "#E22717" }}
+      className="col-sm-12 navbar navbar-expand-lg"
+    >
       <div className="container-fluid">
-        <button className="navbar-brand btn">
-          <img src={logotipo} alt={logotipo} className="img-flluid w-25" />
-        </button>
+        <div className="navbar-brand">
+          <img src={logotipo} alt={logotipo} className="img-fluid w-25" />
+        </div>
+        <form className="d-flex" role="search">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/");
+            }}
+            type="button"
+            className="btn text-white fw-bold fs-5"
+          >
+            Inicio
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/services");
+            }}
+            type="button"
+            className="btn text-white fw-bold fs-5"
+          >
+            Servicio
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/about-us");
+            }}
+            type="button"
+            className="btn text-white fw-bold fs-5"
+          >
+            Nosotros
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/contact");
+            }}
+            type="button"
+            className="btn text-white fw-bold fs-5"
+          >
+            Contacto
+          </button>
+        </form>
       </div>
     </nav>
   );
