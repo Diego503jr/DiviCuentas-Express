@@ -9,6 +9,8 @@ export default function Option({
   food,
   text,
   id,
+  dataBsToogle,
+  dataBsTarget,
   ...props
 }) {
   return (
@@ -32,6 +34,8 @@ export default function Option({
                 style={{ backgroundColor: "#E22717" }}
                 className="btn rounded-5 text-white fs-6"
                 onClick={onClick1}
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
               >
                 Seleccionar
               </button>
