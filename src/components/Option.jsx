@@ -9,14 +9,14 @@ export default function Option({
   food,
   text,
   id,
-  dataBsToogle,
+  dataBsToggle,
   dataBsTarget,
   ...props
 }) {
   return (
-    <label
+    <div
       style={{ cursor: "pointer" }}
-      className={`${food ? "col-sm-4 mt-1 mb-3" : "col-sm-6 mt-1 mb-3"}`}
+      className={`${food ? "col-sm-4 mt-3 mb-4" : "col-sm-6 mt-3 mb-4"}`}
     >
       <div className="container">
         <div className="row">
@@ -34,8 +34,8 @@ export default function Option({
                 style={{ backgroundColor: "#E22717" }}
                 className="btn rounded-5 text-white fs-6"
                 onClick={onClick1}
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
+                data-bs-toggle={dataBsToggle}
+                data-bs-target={dataBsTarget}
               >
                 Seleccionar
               </button>
@@ -43,6 +43,6 @@ export default function Option({
           </div>
         </div>
       </div>
-    </label>
+    </div>
   );
 }

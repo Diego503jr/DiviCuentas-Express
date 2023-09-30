@@ -7,6 +7,7 @@ import postre from "../assets/postre.jpg";
 import almuerzo from "../assets/almuerzo.jpg";
 import { useNavigate } from "react-router-dom";
 import Buttons from "../components/Buttons";
+import Customer from "../components/Customer";
 
 export default function Menu() {
   const navigate = useNavigate();
@@ -18,12 +19,19 @@ export default function Menu() {
     <Dashboard>
       <div className="row">
         <div className="col-sm-12">
-          <Buttons
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/");
-            }}
-          />
+          <div className="row">
+            <div className="col-sm-6">
+              <Buttons
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/");
+                }}
+              />
+            </div>
+            <div className="col-sm-6 d-flex justify-content-end">
+              <Customer />
+            </div>
+          </div>
         </div>
         <div
           style={{ color: "#040100" }}

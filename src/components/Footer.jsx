@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer
       style={{ backgroundColor: "#E22717" }}
-      className="col-sm-12 card-body"
+      className="col-sm-12 d-flex align-items-center"
     >
       <div className="my-4 mx-4">
         <div className="row d-flex justify-content-center align-items-center">

@@ -6,6 +6,7 @@ import Services from "./pages/Services";
 import AboutsUs from "./pages/AboutsUs";
 import Menu from "./pages/Menu";
 import Food from "./pages/Food";
+import Bills from "./pages/Bills";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route element={<AboutsUs />} path="/about-us" />
           <Route element={<Menu />} path="/menu" />
           <Route element={<Food />} path="/food" />
+          <Route element={<Bills />} path="/bills" />
           <Route element={<h1>Not Found....</h1>} path="*" />
         </Routes>
       </BrowserRouter>

@@ -4,21 +4,28 @@ import Buttons from "../components/Buttons";
 import Option from "../components/Option";
 import { useNavigate } from "react-router-dom";
 import { comida } from "../utils/database";
-
-// let saveFood = JSON.parse(localStorage.getItem("comida"));
+import Customer from "../components/Customer";
 
 export default function Food() {
   const navigate = useNavigate();
+
   return (
     <Dashboard>
       <div className="row">
         <div className="col-sm-12">
-          <Buttons
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/menu");
-            }}
-          />
+          <div className="row">
+            <div className="col-sm-6">
+              <Buttons
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/menu");
+                }}
+              />
+            </div>
+            <div className="col-sm-6 d-flex justify-content-end">
+              <Customer />
+            </div>
+          </div>
         </div>
         <div className="col-sm-12 d-flex justify-content-center">
           <h1 className="fs-1">Menú</h1>
@@ -37,9 +44,9 @@ export default function Food() {
           <button
             onClick={(e) => {
               e.preventDefault();
-              alert("Orden realizada");
+              navigate("/bills");
             }}
-            className="btn btn-success w-25"
+            className="btn btn-success w-25 fs-5 fw-bold"
           >
             Confirmar
           </button>

@@ -8,12 +8,9 @@ import personalizado from "../assets/Personalizado.png";
 import Div from "../components/Div";
 import Option from "../components/Option";
 import promocion from "../assets/promocion.jpg";
-import { useNavigate } from "react-router-dom";
-import Modal from "../components/Modal";
+import { AcceptModal } from "../components/Modal";
 
 export default function Home() {
-  const navigate = useNavigate();
-
   const handleOptionUnAvailable = (e) => {
     e.preventDefault();
     alert("Esta opción aún no esta disponible");
@@ -21,14 +18,9 @@ export default function Home() {
 
   return (
     <React.Fragment>
-      <Modal
-        onClick={(e) => {
-          e.preventDefault();
-          navigate("/menu");
-        }}
-      />
+      <AcceptModal />
       <Dashboard>
-        <div className="row">
+        <div className="row h-100">
           <div
             style={{ color: "#040100" }}
             className="col-sm-6 d-flex flex-column justify-content-center align-items-center"
@@ -58,7 +50,13 @@ export default function Home() {
             txt1="Uno es mejor que ninguno"
             onClick1={handleOptionUnAvailable}
           />
-          <Option img1={duo} title1="Pareja" txt1="Con compañia cae bien" />
+          <Option
+            img1={duo}
+            title1="Pareja"
+            txt1="Con compañia cae bien"
+            dataBsTarget="#exampleModal"
+            dataBsToggle="modal"
+          />
           <Option
             img1={trio}
             title1="Trios"

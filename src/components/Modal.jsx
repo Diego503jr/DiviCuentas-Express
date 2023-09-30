@@ -1,61 +1,105 @@
 import React from "react";
+import useForm from "../hooks/useForm";
 
-const Modal = ({ onClick }) => {
+const initialForm = {
+  name1: "",
+  name2: "",
+};
+
+const validationForm = (form) => {
+  let errors = {};
+
+  if (!form.name1.trim()) {
+    errors.name1 = "Campo vacío";
+  } else if (!form.name2.trim()) {
+    errors.name2 = "Campo vacío";
+  }
+
+  return errors;
+};
+
+export const AcceptModal = () => {
+  const { form, errors, handleOnBlur, handleOnChange, handleGetData } = useForm(
+    initialForm,
+    validationForm
+  );
   return (
     <div
-      class="modal fade"
+      className="modal fade"
       id="exampleModal"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header bg-body-secondary">
+            <h1 className="modal-title fs-5" id="exampleModalLabel">
               Ingrese el nombre o apellido
             </h1>
             <button
               type="button"
-              class="btn-close"
+              className="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
-            <div class="mb-3 mt-3">
-              <label for="exampleFormControlInput1" class="form-label">
+          <div className="modal-body">
+            <div className="mb-3 mt-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Nombre 1° persona
               </label>
               <input
-                type="email"
-                class="form-control"
-                id="exampleFormControlInput1"
+                type="text"
+                className="form-control"
+                id="name1"
+                name="name1"
+                value={form.name1}
+                onChange={handleOnChange}
+                onBlur={handleOnBlur}
                 placeholder="Nombre"
               />
+              {errors.name1 && (
+                <div className="text-danger">{errors.name1}</div>
+              )}
             </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Nombre 2° persona
               </label>
               <input
-                type="email"
-                class="form-control"
-                id="exampleFormControlInput1"
+                type="text"
+                className="form-control"
+                id="name2"
+                name="name2"
+                value={form.name2}
+                onChange={handleOnChange}
+                onBlur={handleOnBlur}
                 placeholder="Nombre"
               />
+              {errors.name2 && (
+                <div className="text-danger">{errors.name2}</div>
+              )}
             </div>
           </div>
-          <div class="modal-footer">
+          <div className="modal-footer bg-body-secondary">
             <button
               type="button"
-              class="btn btn-secondary"
+              className="btn btn-danger"
               data-bs-dismiss="modal"
             >
-              Close
+              Cancelar
             </button>
-            <button onClick={onClick} type="button" class="btn btn-primary">
-              Save changes
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                handleGetData();
+              }}
+              type="button"
+              className="btn btn-success"
+              data-bs-dismiss="modal"
+            >
+              Continuar
             </button>
           </div>
         </div>
@@ -64,4 +108,42 @@ const Modal = ({ onClick }) => {
   );
 };
 
-export default Modal;
+export const UnAvailableModal = () => {
+  <div
+    className="modal fade"
+    id="staticBackdrop"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div className="modal-dialog modal-dialog-centered">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="modal-title fs-5" id="staticBackdropLabel">
+            Opción no disponible
+          </h1>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div className="modal-body">
+          <h3>Esta opción aun no esta disponible</h3>
+        </div>
+        <div className="modal-footer">
+          <button
+            type="button"
+            className="btn btn-primary"
+            data-bs-dismiss="modal"
+          >
+            Aceptar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>;
+};
