@@ -1,8 +1,8 @@
 import React from "react";
+import { useAuth } from "../hooks/useAuth";
 
 export default function Customer() {
-  const name1 = JSON.parse(localStorage.getItem("first"));
-  const name2 = JSON.parse(localStorage.getItem("second"));
+  const auth = useAuth();
 
   return (
     <div className="row">
@@ -11,14 +11,15 @@ export default function Customer() {
           style={{ color: "green", fontSize: "3rem" }}
           className="bi bi-person-fill"
         ></i>
-        {name1}
+        {auth.customer1}
       </div>
+
       <div className="col-sm-5 text-black">
         <i
           style={{ color: "blue", fontSize: "3rem" }}
           className="bi bi-person-fill"
         ></i>
-        {name2}
+        {auth.customer2}
       </div>
     </div>
   );

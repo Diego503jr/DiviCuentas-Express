@@ -8,7 +8,8 @@ export default function Option({
   onClick1,
   food,
   text,
-  id,
+  id1,
+  id2,
   dataBsToggle,
   dataBsTarget,
   ...props
@@ -28,7 +29,10 @@ export default function Option({
             <h3 className="fs-5 fw-bold">{title1}</h3>
             <p className="fw-normal">{txt1}</p>
             {food ? (
-              <Check text={text} id={id} {...props} />
+              <div className="d-flex">
+                <Check person={1} text={text} id={id1} {...props} />
+                <Check person={2} text={text} id={id2} {...props} />
+              </div>
             ) : (
               <button
                 style={{ backgroundColor: "#E22717" }}

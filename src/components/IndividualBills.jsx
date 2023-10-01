@@ -1,12 +1,15 @@
 import React from "react";
+import { useAuth } from "../hooks/useAuth";
 
 export default function IndividualBills() {
-  const name1 = JSON.parse(localStorage.getItem("first"));
-  const name2 = JSON.parse(localStorage.getItem("second"));
+  const auth = useAuth();
+
   return (
     <React.Fragment>
       <div className="col-sm-7 d-flex flex-column align-items-center border-4 border-black border-bottom my-2">
-        <h1 className="col-sm-7 d-flex justify-content-center">{name1}</h1>
+        <h1 className="col-sm-7 d-flex justify-content-center">
+          {auth.customer1}
+        </h1>
         <div className="container">
           <div className="row d-flex justify-content-center mb-3">
             <div className="col-sm-5 d-flex justify-content-between">
@@ -35,7 +38,9 @@ export default function IndividualBills() {
         </div>
       </div>
       <div className="col-sm-7 d-flex flex-column align-items-center border-4 border-black border-bottom my-2">
-        <h1 className="col-sm-7 d-flex justify-content-center">{name2}</h1>
+        <h1 className="col-sm-7 d-flex justify-content-center">
+          {auth.customer2}
+        </h1>
         <div className="container">
           <div className="row d-flex justify-content-center mb-3">
             <div className="col-sm-5 d-flex justify-content-between">

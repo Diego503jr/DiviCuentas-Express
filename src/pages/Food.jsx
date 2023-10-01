@@ -5,9 +5,27 @@ import Option from "../components/Option";
 import { useNavigate } from "react-router-dom";
 import { comida } from "../utils/database";
 import Customer from "../components/Customer";
+import { useAuth } from "../hooks/useAuth";
+import useForm from "../hooks/useForm";
+
+const initialForm = {
+  customerOrder1: [],
+  customerOrder2: [],
+};
+
+const validationForm = (form) => {
+  let errors = [];
+
+  return errors;
+};
 
 export default function Food() {
   const navigate = useNavigate();
+  const auth = useAuth();
+  const { form, handleOnChange, handleOnBlur, handleOrderFood } = useForm(
+    initialForm,
+    validationForm
+  );
 
   return (
     <Dashboard>
@@ -37,6 +55,8 @@ export default function Food() {
             title1={item.title}
             txt1={`$ ${item.price}`}
             food={true}
+            id1={auth.customer1}
+            id2={auth.customer2}
             text="Seleccione"
           />
         ))}

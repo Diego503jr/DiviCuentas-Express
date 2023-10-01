@@ -1,14 +1,15 @@
 import React from "react";
+import "./components.css";
 
-export default function Check({ text, id, ...props }) {
+export default function Check({ text, id, person, ...props }) {
   return (
-    <div>
+    <label className="mx-4 d-flex flex-column align-items-center">
       <input
-        className="form-check-input border-dark"
+        className={`form-check-input border-dark`}
         type="checkbox"
-        value=""
-        id="flexCheckDefault"
+        id={id}
+        {...props}
       />
-    </div>
+    </label>
   );
 }
