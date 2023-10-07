@@ -9,15 +9,6 @@ export function AuthCustomerProvider({ children }) {
   const [customer2, setCustomer2] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  /**
-   *  SignIn & SignUp
-   *
-   * credentials - Credenciales del doctor para iniciar sesión.
-   * credentials.email - Correo electrónico del doctor.
-   * credentials.password - Contraseña del doctor.
-   *
-   */
-
   const getData = async ({ name1, name2 }) => {
     try {
       setLoading(true);

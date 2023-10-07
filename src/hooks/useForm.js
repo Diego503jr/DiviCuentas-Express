@@ -27,7 +27,7 @@ export default function useForm(initialForm, validationForm) {
     setErrors(validationForm(form));
   };
 
-  const handleGetData = () => {
+  const handleGetData = (e) => {
     const { name1, name2 } = form;
     setErrors(validationForm(form));
 

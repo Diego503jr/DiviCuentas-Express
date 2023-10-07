@@ -2,6 +2,8 @@ import React from "react";
 import logotipo from "../assets/v1horizontal.png";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer
       style={{ backgroundColor: "#E22717" }}
@@ -18,8 +20,7 @@ export default function Footer() {
           </div>
           <div className="col-sm-6 d-flex justify-content-center">
             <div className="text-white text-center">
-              Copyright © {new Date().getFullYear()} DiviCuentas Express S.A de
-              C.V
+              Copyright © {year} DiviCuentas Express S.A de C.V
             </div>
           </div>
           <div className="col-sm-4 d-flex justify-content-center">
