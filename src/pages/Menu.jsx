@@ -28,7 +28,7 @@ export default function Menu() {
                 }}
               />
             </div>
-            <div className="col-sm-6 d-flex justify-content-end">
+            <div className="col-sm-6 d-flex justify-content-center">
               <Customer />
             </div>
           </div>

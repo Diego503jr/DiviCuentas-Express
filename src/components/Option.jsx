@@ -17,7 +17,11 @@ export default function Option({
   return (
     <div
       style={{ cursor: "pointer" }}
-      className={`${food ? "col-sm-4 mt-3 mb-4" : "col-sm-6 mt-3 mb-4"}`}
+      className={`${
+        food
+          ? "d-flex flex-wrap w-50 mt-3 mb-4"
+          : "d-flex flex-wrap w-50 mt-3 mb-4"
+      }`}
     >
       <div className="container">
         <div className="row">
