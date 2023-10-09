@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { isValidObjKey, isValidObjValue } from "../utils/validate";
-import { useAuth } from "./useAuth";
 import { useNavigate } from "react-router-dom";
 
 export default function useForm(initialForm, validationForm) {
-  const auth = useAuth();
+  let clientes = [];
   const navigate = useNavigate();
 
   const [form, setForm] = useState(initialForm);
@@ -13,13 +12,29 @@ export default function useForm(initialForm, validationForm) {
 
   const handleOnChange = (e) => {
     const {
-      target: { name, value },
+      target: { name, value, checked },
     } = e;
 
-    setForm((prevForm) => ({
-      ...prevForm,
-      [name]: value,
-    }));
+    switch (name) {
+      case "customerFood1":
+        setForm((prevForm) => ({
+          ...prevForm,
+          [name]: checked,
+        }));
+        break;
+      case "customerFood2":
+        setForm((prevForm) => ({
+          ...prevForm,
+          [name]: checked,
+        }));
+        break;
+      default:
+        setForm((prevForm) => ({
+          ...prevForm,
+          [name]: value,
+        }));
+        break;
+    }
   };
 
   const handleOnBlur = (e) => {
@@ -34,16 +49,27 @@ export default function useForm(initialForm, validationForm) {
     if (isValidObjKey(errors) && isValidObjValue(form)) {
       setLoading(true);
       setTimeout(() => {
-        auth.getData({ name1, name2 });
+        navigate("./menu");
+        let cliente1 = {
+          nombre: name1,
+          nombreComida: [],
+          precioComida: [],
+        };
+        let cliente2 = {
+          nombre: name2,
+          nombreComida: [],
+          precioComida: [],
+        };
+        clientes.push(cliente1);
+        clientes.push(cliente2);
+        const clientesJSON = JSON.stringify(clientes);
+        localStorage.setItem("clientes", clientesJSON);
         setLoading(false);
       }, 1000);
     }
   };
 
-  const handleOrderFood = (e) => {
-    e.preventDefault();
-    const { customerOrder1, customerOrder2 } = form;
-
+  const handleConfirm = () => {
     if (isValidObjKey(errors) && isValidObjValue(form)) {
       navigate("/bills");
     }
@@ -56,6 +82,6 @@ export default function useForm(initialForm, validationForm) {
     handleOnChange,
     handleOnBlur,
     handleGetData,
-    handleOrderFood,
+    handleConfirm,
   };
 }

@@ -1,13 +1,9 @@
-.custom-green {
+.background-green input[type="checkbox"]:checked {
   background-color: green;
 }
 
-.custom-blue {
+.background-blue input[type="checkbox"]:checked {
   background-color: blue;
-}
-
-input[type="checkbox"]:checked {
-  background-color: #173a44;
 }
 
 /* input[type="checkbox"][id="custom-green"]:checked {

@@ -19,7 +19,7 @@ const validationForm = (form) => {
 };
 
 export const AcceptModal = () => {
-  const { form, errors, handleOnBlur, handleOnChange, handleGetData } = useForm(
+  const { form, handleOnBlur, handleOnChange, handleGetData } = useForm(
     initialForm,
     validationForm
   );

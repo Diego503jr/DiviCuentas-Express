@@ -1,25 +1,25 @@
 import React from "react";
-import { useAuth } from "../hooks/useAuth";
 
 export default function Customer() {
-  const auth = useAuth();
+  const name1 = JSON.parse(localStorage.getItem("clientes"));
+  const name2 = JSON.parse(localStorage.getItem("clientes"));
 
   return (
     <div className="col-sm-12 d-flex justify-content-lg-end justify-content-center ">
-      <div className="mx-4 text-black">
+      <div className="mx-4 d-flex flex-column text-black">
         <i
           style={{ color: "green", fontSize: "3rem" }}
           className="bi bi-person-fill"
         ></i>
-        {auth.customer1}
+        {name1[0].nombre}
       </div>
 
-      <div className="mx-4 text-black">
+      <div className="mx-4 d-flex flex-column text-black">
         <i
           style={{ color: "blue", fontSize: "3rem" }}
           className="bi bi-person-fill"
         ></i>
-        {auth.customer2}
+        {name2[1].nombre}
       </div>
     </div>
   );
