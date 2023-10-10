@@ -12,11 +12,9 @@ export default function ItemFood({
   value2,
   onChange1,
   onChange2,
-  onBlur1,
-  onBlur2,
   name1,
   name2,
-  cheked1,
+  checked1,
   checked2,
 }) {
   return (
@@ -36,15 +34,13 @@ export default function ItemFood({
                 name={name1}
                 value={value1}
                 onChange={onChange1}
-                onBlur={onBlur1}
-                checked={cheked1}
+                checked={checked1}
               />
               <Check
                 id={id2}
                 name={name2}
                 value={value2}
                 onChange={onChange2}
-                onBlur={onBlur2}
                 checked={checked2}
               />
             </div>

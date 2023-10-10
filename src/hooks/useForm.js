@@ -1,39 +1,61 @@
 import { useState } from "react";
 import { isValidObjKey, isValidObjValue } from "../utils/validate";
 import { useNavigate } from "react-router-dom";
+// import { comida } from "../utils/database";
 
 export default function useForm(initialForm, validationForm) {
   let clientes = [];
   const navigate = useNavigate();
 
   const [form, setForm] = useState(initialForm);
+  const [cliente1, setCliente1] = useState({
+    comida: [],
+  });
+  const [cliente2, setCliente2] = useState({
+    comida: [],
+  });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
   const handleOnChange = (e) => {
     const {
-      target: { name, value, checked },
+      target: { name, value },
     } = e;
+    setForm((prevForm) => ({
+      ...prevForm,
+      [name]: value,
+    }));
+  };
 
-    switch (name) {
-      case "customerFood1":
-        setForm((prevForm) => ({
-          ...prevForm,
-          [name]: checked,
-        }));
-        break;
-      case "customerFood2":
-        setForm((prevForm) => ({
-          ...prevForm,
-          [name]: checked,
-        }));
-        break;
-      default:
-        setForm((prevForm) => ({
-          ...prevForm,
-          [name]: value,
-        }));
-        break;
+  const handleCheckbox1Change = (comidaSeleccionada, isChecked) => {
+    if (isChecked) {
+      setCliente1((prevCliente) => ({
+        ...prevCliente,
+        comida: [...prevCliente.comida, comidaSeleccionada],
+      }));
+    } else {
+      setCliente1((prevCliente) => ({
+        ...prevCliente,
+        comida: prevCliente.comida.filter(
+          (comida) => comida !== comidaSeleccionada
+        ),
+      }));
+    }
+  };
+
+  const handleCheckbox2Change = (comidaSeleccionada, isChecked) => {
+    if (isChecked) {
+      setCliente2((prevCliente) => ({
+        ...prevCliente,
+        comida: [...prevCliente.comida, comidaSeleccionada],
+      }));
+    } else {
+      setCliente2((prevCliente) => ({
+        ...prevCliente,
+        comida: prevCliente.comida.filter(
+          (comida) => comida !== comidaSeleccionada
+        ),
+      }));
     }
   };
 
@@ -43,6 +65,7 @@ export default function useForm(initialForm, validationForm) {
   };
 
   const handleGetData = (e) => {
+    e.preventDefault();
     const { name1, name2 } = form;
     setErrors(validationForm(form));
 
@@ -69,7 +92,7 @@ export default function useForm(initialForm, validationForm) {
     }
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     if (isValidObjKey(errors) && isValidObjValue(form)) {
       navigate("/bills");
     }
@@ -83,5 +106,9 @@ export default function useForm(initialForm, validationForm) {
     handleOnBlur,
     handleGetData,
     handleConfirm,
+    handleCheckbox1Change,
+    handleCheckbox2Change,
+    cliente1,
+    cliente2,
   };
 }

@@ -91,10 +91,7 @@ export const AcceptModal = () => {
               Cancelar
             </button>
             <button
-              onClick={(e) => {
-                e.preventDefault();
-                handleGetData();
-              }}
+              onClick={handleGetData}
               type="button"
               className="btn btn-success"
               data-bs-dismiss="modal"

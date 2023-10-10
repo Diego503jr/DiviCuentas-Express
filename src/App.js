@@ -8,6 +8,9 @@ import Menu from "./pages/Menu";
 import Food from "./pages/Food";
 import Bills from "./pages/Bills";
 
+// Local:            http://localhost:3000
+// On Your Network:  http://192.168.0.22:3000
+
 function App() {
   return (
     <div className="App">

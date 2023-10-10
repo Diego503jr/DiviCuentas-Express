@@ -7,29 +7,21 @@ import Customer from "../components/Customer";
 import useForm from "../hooks/useForm";
 import ItemFood from "../components/ItemFood";
 
-const initialForm = {
-  customerFood1: false,
-  customerFood2: false,
-};
-
-const validationForm = (form) => {
-  let errors = [];
-
-  return errors;
-};
-
 export default function Food() {
   const navigate = useNavigate();
-  const { form, handleOnChange, handleOnBlur, handleConfirm } = useForm(
-    initialForm,
-    validationForm
-  );
+  const {
+    cliente1,
+    cliente2,
+    handleCheckbox1Change,
+    handleCheckbox2Change,
+    handleConfirm,
+  } = useForm();
 
-  const id1 = JSON.parse(localStorage.getItem("clientes"));
-  const id2 = JSON.parse(localStorage.getItem("clientes"));
+  // const id1 = JSON.parse(localStorage.getItem("clientes"));
+  // const id2 = JSON.parse(localStorage.getItem("clientes"));
 
-  const idCust1 = id1[0];
-  const idCust2 = id2[1];
+  // const idCust1 = id1.id;
+  // const idCust2 = id2[1];
 
   return (
     <Dashboard>
@@ -52,24 +44,26 @@ export default function Food() {
         <div className="col-sm-12 d-flex justify-content-center">
           <h1 className="fs-1">Menú</h1>
         </div>
-        {comida.map((item, id) => (
+        {comida.map((item, index) => (
           <ItemFood
-            key={id}
+            key={index}
             img1={item.image}
             title1={item.title}
             txt1={`$ ${item.price}`}
-            name1="customerFood1"
-            name2="customerFood2"
-            value1="customerFood1"
-            value2="customerFood2"
-            id1="customerFood1"
-            id2="customerFood2"
-            onBlur1={handleOnBlur}
-            onBlur2={handleOnBlur}
-            onChange1={handleOnChange}
-            onChange2={handleOnChange}
-            cheked1={form.customerFood1}
-            checked2={form.customerFood2}
+            name1={`cliente1_${item.id}`}
+            name2={`cliente2:${item.id}`}
+            value1={item}
+            value2={item}
+            id1={`cliente1:${item.id}`}
+            id2={`cliente2:${item.id}`}
+            onChange1={(e) => {
+              handleCheckbox1Change(item, e.target.checked);
+            }}
+            onChange2={(e) => {
+              handleCheckbox2Change(item, e.target.checked);
+            }}
+            checked1={cliente1.comida.includes(item)}
+            checked2={cliente2.comida.includes(item)}
           />
         ))}
         <div className="col-sm-12 d-flex justify-content-center my-3">
