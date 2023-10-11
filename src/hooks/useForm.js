@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 // import { comida } from "../utils/database";
 
 export default function useForm(initialForm, validationForm) {
-  let clientes = [];
+  let clientes1;
+  let clientes2;
+
   const navigate = useNavigate();
 
   const [form, setForm] = useState(initialForm);
@@ -14,6 +16,7 @@ export default function useForm(initialForm, validationForm) {
   const [cliente2, setCliente2] = useState({
     comida: [],
   });
+
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -73,29 +76,27 @@ export default function useForm(initialForm, validationForm) {
       setLoading(true);
       setTimeout(() => {
         navigate("./menu");
-        let cliente1 = {
-          nombre: name1,
-          nombreComida: [],
-          precioComida: [],
-        };
-        let cliente2 = {
-          nombre: name2,
-          nombreComida: [],
-          precioComida: [],
-        };
-        clientes.push(cliente1);
-        clientes.push(cliente2);
-        const clientesJSON = JSON.stringify(clientes);
-        localStorage.setItem("clientes", clientesJSON);
+        clientes1 = name1;
+        clientes2 = name2;
+        localStorage.setItem("cliente1", JSON.stringify(clientes1));
+        localStorage.setItem("cliente2", JSON.stringify(clientes2));
         setLoading(false);
       }, 1000);
     }
   };
 
-  const handleConfirm = async () => {
-    if (isValidObjKey(errors) && isValidObjValue(form)) {
+  const handleConfirm = (e) => {
+    e.preventDefault();
+
+    const comidaCliente1 = cliente1.comida;
+    const comidaCliente2 = cliente2.comida;
+
+    localStorage.setItem("comidaCliente1", JSON.stringify(comidaCliente1));
+    localStorage.setItem("comidaCliente2", JSON.stringify(comidaCliente2));
+
+    setTimeout(() => {
       navigate("/bills");
-    }
+    }, 1000);
   };
 
   return {

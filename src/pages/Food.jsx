@@ -50,8 +50,8 @@ export default function Food() {
             img1={item.image}
             title1={item.title}
             txt1={`$ ${item.price}`}
-            name1={`cliente1_${item.id}`}
-            name2={`cliente2:${item.id}`}
+            name1={`cliente1`}
+            name2={`cliente2`}
             value1={item}
             value2={item}
             id1={`cliente1:${item.id}`}
@@ -68,13 +68,10 @@ export default function Food() {
         ))}
         <div className="col-sm-12 d-flex justify-content-center my-3">
           <button
-            onClick={(e) => {
-              e.preventDefault();
-              handleConfirm();
-            }}
-            className="btn btn-success w-25 fs-5 fw-bold"
+            onClick={handleConfirm}
+            className="btn btn-success fs-5 fw-bold"
           >
-            Confirmar
+            <div className="mx-4">Confirmar</div>
           </button>
         </div>
       </div>
