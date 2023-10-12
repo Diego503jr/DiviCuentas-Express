@@ -41,7 +41,7 @@ export default function Bills() {
             />
           ))}
           <div className="col-sm-7 fw-bold fs-5 my-2">
-            Subtotal: $ {totalCliente1.toFixed(2)}
+            Total 1° persona: $ {totalCliente1.toFixed(2)}
           </div>
           <h1 className="col-sm-7 d-flex justify-content-center border-4 border-black border-top">
             {name2}
@@ -54,7 +54,7 @@ export default function Bills() {
             />
           ))}
           <div className="col-sm-7 fw-bold fs-5 mt-2">
-            Subtotal: $ {totalCliente2.toFixed(2)}
+            Total 2° persona: $ {totalCliente2.toFixed(2)}
           </div>
           <div className="col-sm-7 d-flex justify-content-center border-4 border-black border-top my-2">
             <h1 className="mx-3 mt-3">Total a pagar: </h1>

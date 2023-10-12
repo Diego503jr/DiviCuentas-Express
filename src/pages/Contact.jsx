@@ -24,7 +24,7 @@ export default function Contact() {
         className="row d-flex justify-content-center"
       >
         <div className="col-sm-8 d-flex justify-content-center my-3">
-          <h1>Contactanos</h1>
+          <h1>Contáctanos</h1>
         </div>
         <form action="" className="col-sm-8 card border border-2 my-3">
           <div className="my-3">

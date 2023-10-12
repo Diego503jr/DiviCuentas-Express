@@ -5,6 +5,7 @@ export default function ItemFood({
   img1,
   id,
   title1,
+  description1,
   txt1,
   id1,
   id2,
@@ -27,6 +28,7 @@ export default function ItemFood({
           >
             <img src={img1} alt={img1} className="img-fluid w-25" />
             <h3 className="fs-5 fw-bold">{title1}</h3>
+            <i className="fs-6">{description1}</i>
             <p className="fw-normal">{txt1}</p>
             <div className="d-flex">
               <Check

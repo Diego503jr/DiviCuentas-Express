@@ -11,9 +11,7 @@ export default function Navbar() {
       className="col-sm-12 navbar navbar-expand-lg"
     >
       <div className="container-fluid">
-        <div className="navbar-brand">
-          <img src={logotipo} alt={logotipo} className="img-fluid w-25" />
-        </div>
+        <img src={logotipo} alt={logotipo} className="img-fluid w-25" />
         <form className="d-flex" role="search">
           <button
             onClick={(e) => {
@@ -21,7 +19,7 @@ export default function Navbar() {
               navigate("/");
             }}
             type="button"
-            className="btn text-white fw-bold fs-5"
+            className="nav-link mx-2 text-white fw-bold fs-5"
           >
             Inicio
           </button>
@@ -31,7 +29,7 @@ export default function Navbar() {
               navigate("/services");
             }}
             type="button"
-            className="btn text-white fw-bold fs-5"
+            className="nav-link mx-2 text-white fw-bold fs-5"
           >
             Servicio
           </button>
@@ -41,7 +39,7 @@ export default function Navbar() {
               navigate("/about-us");
             }}
             type="button"
-            className="btn text-white fw-bold fs-5"
+            className="nav-link mx-2 text-white fw-bold fs-5"
           >
             Nosotros
           </button>
@@ -51,7 +49,7 @@ export default function Navbar() {
               navigate("/contact");
             }}
             type="button"
-            className="btn text-white fw-bold fs-5"
+            className="nav-link mx-2 text-white fw-bold fs-5"
           >
             Contacto
           </button>

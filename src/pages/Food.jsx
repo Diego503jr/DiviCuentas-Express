@@ -47,6 +47,7 @@ export default function Food() {
               key={index}
               img1={item.image}
               title1={item.title}
+              description1={item.description}
               txt1={`$ ${item.price}`}
               name1={`cliente1`}
               name2={`cliente2`}

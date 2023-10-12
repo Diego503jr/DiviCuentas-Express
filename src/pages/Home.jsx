@@ -20,13 +20,13 @@ export default function Home() {
         <div className="row h-100">
           <div
             style={{ color: "#040100" }}
-            className="col-sm-5 d-flex flex-column justify-content-center align-items-center"
+            className="col-sm-6 d-flex flex-column justify-content-center align-items-center"
           >
             <h1
               style={{ fontSize: "3.7rem", color: "#040100" }}
               className="fw-bold lh-1"
             >
-              Saborea innovacción, paga sin complicación
+              Saborea innovación, paga sin complicación
             </h1>
           </div>
           <div className="col-sm-6">
