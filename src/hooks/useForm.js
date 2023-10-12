@@ -18,6 +18,7 @@ export const useForm = (initialForm, validationForm) => {
 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [errorName, setErrorName] = useState(null);
 
   const handleOnChange = (e) => {
     const {
@@ -86,18 +87,21 @@ export const useForm = (initialForm, validationForm) => {
 
   const handleConfirm = (e) => {
     e.preventDefault();
+    if (cliente1.comida.length === 0 && cliente2.comida.length === 0) {
+      setErrorName("Debe seleccionar la comida para mostrar la cuenta");
+    } else {
+      setLoading(true);
+      setTimeout(() => {
+        const comidaCliente1 = cliente1.comida;
+        const comidaCliente2 = cliente2.comida;
 
-    setLoading(true);
-    setTimeout(() => {
-      const comidaCliente1 = cliente1.comida;
-      const comidaCliente2 = cliente2.comida;
+        localStorage.setItem("comidaCliente1", JSON.stringify(comidaCliente1));
+        localStorage.setItem("comidaCliente2", JSON.stringify(comidaCliente2));
 
-      localStorage.setItem("comidaCliente1", JSON.stringify(comidaCliente1));
-      localStorage.setItem("comidaCliente2", JSON.stringify(comidaCliente2));
-
-      navigate("/bills");
-      setLoading(false);
-    }, 1000);
+        navigate("/bills");
+        setLoading(false);
+      }, 1000);
+    }
   };
 
   const handlePayment = (e) => {
@@ -126,5 +130,6 @@ export const useForm = (initialForm, validationForm) => {
     handlePayment,
     cliente1,
     cliente2,
+    errorName,
   };
 };

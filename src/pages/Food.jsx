@@ -12,6 +12,7 @@ export default function Food() {
   const navigate = useNavigate();
   const {
     loading,
+    errorName,
     cliente1,
     cliente2,
     handleCheckbox1Change,
@@ -39,8 +40,9 @@ export default function Food() {
               </div>
             </div>
           </div>
-          <div className="col-sm-12 d-flex justify-content-center">
+          <div className="col-sm-12 d-flex flex-column align-items-center">
             <h1 className="fs-1">Menú</h1>
+            {errorName && <div className="text-danger">{errorName}</div>}
           </div>
           {comida.map((item, index) => (
             <ItemFood
