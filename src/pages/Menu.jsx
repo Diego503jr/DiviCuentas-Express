@@ -8,57 +8,65 @@ import almuerzo from "../assets/almuerzo.jpg";
 import { useNavigate } from "react-router-dom";
 import Buttons from "../components/Buttons";
 import Customer from "../components/Customer";
+import DesarrolloModal from "../components/DesarrolloModal";
 
 export default function Menu() {
   const navigate = useNavigate();
-  const handleMenuUnAvailable = (e) => {
-    e.preventDefault();
-    alert("Esta opción aún no esta disponible");
-  };
+
   return (
-    <Dashboard>
-      <div className="row">
-        <div className="col-sm-12">
-          <div className="row">
-            <div className="col-sm-6">
-              <Buttons
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/");
-                }}
-              />
-            </div>
-            <div className="col-sm-6 d-flex justify-content-center">
-              <Customer />
+    <React.Fragment>
+      <DesarrolloModal />
+      <Dashboard>
+        <div className="row">
+          <div className="col-sm-12">
+            <div className="row">
+              <div className="col-sm-6">
+                <Buttons
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/");
+                  }}
+                />
+              </div>
+              <div className="col-sm-6 d-flex justify-content-center">
+                <Customer />
+              </div>
             </div>
           </div>
+          <div
+            style={{ color: "#040100" }}
+            className="col-sm-12 d-flex justify-content-center"
+          >
+            <h1 className="fs-1 fw-bold">Carta</h1>
+          </div>
+          <Option
+            img1={desayuno}
+            title1="Desayuno"
+            dataBsTarget="#endesarrollo"
+            dataBsToggle="modal"
+          />
+          <Option
+            img1={almuerzo}
+            title1="Almuerzo"
+            onClick1={(e) => {
+              e.preventDefault();
+              navigate("/food");
+            }}
+          />
+          <Option
+            img1={cena}
+            title1="Cena"
+            dataBsTarget="#endesarrollo"
+            dataBsToggle="modal"
+          />
+          <Option
+            img1={postre}
+            title1="Postre"
+            dataBsTarget="#endesarrollo"
+            dataBsToggle="modal"
+          />
         </div>
-        <div
-          style={{ color: "#040100" }}
-          className="col-sm-12 d-flex justify-content-center"
-        >
-          <h1 className="fs-1 fw-bold">Carta</h1>
-        </div>
-        <Option
-          img1={desayuno}
-          title1="Desayuno"
-          onClick1={handleMenuUnAvailable}
-        />
-        <Option
-          img1={almuerzo}
-          title1="Almuerzo"
-          onClick1={(e) => {
-            e.preventDefault();
-            navigate("/food");
-          }}
-        />
-        <Option img1={cena} title1="Cena" onClick1={handleMenuUnAvailable} />
-        <Option
-          img1={postre}
-          title1="Postre"
-          onClick1={handleMenuUnAvailable}
-        />
-      </div>
-    </Dashboard>
+      </Dashboard>
+    </React.Fragment>
   );
 }

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { isValidObjKey, isValidObjValue } from "../utils/validate";
 import { useNavigate } from "react-router-dom";
-// import { comida } from "../utils/database";
 
-export default function useForm(initialForm, validationForm) {
+export const useForm = (initialForm, validationForm) => {
   let clientes1;
   let clientes2;
 
@@ -81,22 +80,37 @@ export default function useForm(initialForm, validationForm) {
         localStorage.setItem("cliente1", JSON.stringify(clientes1));
         localStorage.setItem("cliente2", JSON.stringify(clientes2));
         setLoading(false);
-      }, 1000);
+      }, 2000);
     }
   };
 
   const handleConfirm = (e) => {
     e.preventDefault();
 
-    const comidaCliente1 = cliente1.comida;
-    const comidaCliente2 = cliente2.comida;
-
-    localStorage.setItem("comidaCliente1", JSON.stringify(comidaCliente1));
-    localStorage.setItem("comidaCliente2", JSON.stringify(comidaCliente2));
-
+    setLoading(true);
     setTimeout(() => {
+      const comidaCliente1 = cliente1.comida;
+      const comidaCliente2 = cliente2.comida;
+
+      localStorage.setItem("comidaCliente1", JSON.stringify(comidaCliente1));
+      localStorage.setItem("comidaCliente2", JSON.stringify(comidaCliente2));
+
       navigate("/bills");
+      setLoading(false);
     }, 1000);
+  };
+
+  const handlePayment = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      localStorage.removeItem("cliente1");
+      localStorage.removeItem("cliente2");
+      localStorage.removeItem("comidaCliente1");
+      localStorage.removeItem("comidaCliente2");
+      navigate("/");
+      setLoading(false);
+    }, 3000);
   };
 
   return {
@@ -109,7 +123,8 @@ export default function useForm(initialForm, validationForm) {
     handleConfirm,
     handleCheckbox1Change,
     handleCheckbox2Change,
+    handlePayment,
     cliente1,
     cliente2,
   };
-}
+};

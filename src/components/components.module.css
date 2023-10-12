@@ -1,3 +1,8 @@
+.loader {
+  background-color: #e22717;
+  z-index: 1600;
+}
+
 .background-green input[type="checkbox"]:checked {
   background-color: green;
 }

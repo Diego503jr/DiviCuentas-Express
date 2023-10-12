@@ -9,21 +9,18 @@ import Div from "../components/Div";
 import Option from "../components/Option";
 import promocion from "../assets/promocion.jpg";
 import { AcceptModal } from "../components/Modal";
+import DesarrolloModal from "../components/DesarrolloModal";
 
 export default function Home() {
-  const handleOptionUnAvailable = (e) => {
-    e.preventDefault();
-    alert("Esta opción aún no esta disponible");
-  };
-
   return (
     <React.Fragment>
       <AcceptModal />
+      <DesarrolloModal />
       <Dashboard>
         <div className="row h-100">
           <div
             style={{ color: "#040100" }}
-            className="col-sm-6 d-flex flex-column justify-content-center align-items-center"
+            className="col-sm-5 d-flex flex-column justify-content-center align-items-center"
           >
             <h1
               style={{ fontSize: "3.7rem", color: "#040100" }}
@@ -31,14 +28,6 @@ export default function Home() {
             >
               Saborea innovacción, paga sin complicación
             </h1>
-            <h2 className="fs-2 fw-bolder mt-5">Misión</h2>
-            <p className="">
-              Nuestra misión es revolucionar la industria restaurantera a través
-              de la innovación tecnológica. Trabajamos para proporcionar a los
-              usuarios una plataforma única e interactiva que les permita
-              explorar, realizar pedidos y disfrutar de los sabores en los
-              mejores restaurantes, todo ello en línea.
-            </p>
           </div>
           <div className="col-sm-6">
             <img src={amigos} alt={amigos} className="img-fluid" />
@@ -48,7 +37,8 @@ export default function Home() {
             img1={individual}
             title1="Individual"
             txt1="Uno es mejor que ninguno"
-            onClick1={handleOptionUnAvailable}
+            dataBsTarget="#endesarrollo"
+            dataBsToggle="modal"
           />
           <Option
             img1={duo}
@@ -61,13 +51,15 @@ export default function Home() {
             img1={trio}
             title1="Trios"
             txt1="Los tres mosqueteros"
-            onClick1={handleOptionUnAvailable}
+            dataBsTarget="#endesarrollo"
+            dataBsToggle="modal"
           />
           <Option
             img1={personalizado}
             title1="Personalizado"
             txt1="Si somos varios es mejor"
-            onClick1={handleOptionUnAvailable}
+            dataBsTarget="#endesarrollo"
+            dataBsToggle="modal"
           />
           <div className="col-sm-12 d-flex justify-content-center mt-2 border-top border-black border-5">
             <img

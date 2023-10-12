@@ -2,6 +2,21 @@ import React from "react";
 import Dashboard from "../components/Dashboard";
 
 export default function Contact() {
+  function enviarEmail() {
+    const email = document.getElementById("emailInput").value;
+    const asunto = "Contacto desde DiviCuentas Express";
+    const cuerpo = document.getElementById("cuerpoInput").value;
+
+    var link =
+      "mailto:innovacionesgastrotech@gmail.com?subject=" +
+      encodeURIComponent(asunto) +
+      "&body=" +
+      encodeURIComponent(cuerpo) +
+      "&cc=" +
+      email;
+    window.location.href = link;
+  }
+
   return (
     <Dashboard>
       <div
@@ -19,7 +34,7 @@ export default function Contact() {
             <input
               type="email"
               className="form-control"
-              id="exampleFormControlInput1"
+              id="emailInput"
               placeholder="ejemplo123@ejemplo.com"
             />
             <div id="emailHelp" className="form-text">
@@ -32,7 +47,7 @@ export default function Contact() {
             </label>
             <textarea
               className="form-control"
-              id="exampleFormControlTextarea1"
+              id="cuerpoInput"
               rows="3"
             ></textarea>
             <div id="emailHelp" className="form-text">
@@ -41,7 +56,7 @@ export default function Contact() {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                alert("Mensaje enviado satisfactoriamente");
+                enviarEmail();
               }}
               className="btn btn-success my-3 w-100"
             >
