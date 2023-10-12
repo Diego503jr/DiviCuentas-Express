@@ -23,8 +23,14 @@ export default function Home() {
             className="col-sm-6 d-flex flex-column justify-content-center align-items-center"
           >
             <h1
+              style={{ color: "#040100", fontSize: "2.5rem" }}
+              className="fw-bold lh-1  d-lg-none"
+            >
+              Saborea innovación, paga sin complicación
+            </h1>
+            <h1
               style={{ fontSize: "3.7rem", color: "#040100" }}
-              className="fw-bold lh-1"
+              className="fw-bold lh-1 d-none d-lg-flex"
             >
               Saborea innovación, paga sin complicación
             </h1>

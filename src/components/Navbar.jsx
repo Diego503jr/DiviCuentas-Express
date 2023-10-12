@@ -23,7 +23,7 @@ export default function Navbar() {
           >
             Inicio
           </button>
-          <button
+          {/* <button
             onClick={(e) => {
               e.preventDefault();
               navigate("/services");
@@ -32,7 +32,7 @@ export default function Navbar() {
             className="nav-link mx-2 text-white fw-bold fs-5"
           >
             Servicio
-          </button>
+          </button> */}
           <button
             onClick={(e) => {
               e.preventDefault();
