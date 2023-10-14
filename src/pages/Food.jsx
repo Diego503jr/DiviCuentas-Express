@@ -42,7 +42,6 @@ export default function Food() {
           </div>
           <div className="col-sm-12 d-flex flex-column align-items-center">
             <h1 className="fs-1">Menú</h1>
-            {errorName && <div className="text-danger">{errorName}</div>}
           </div>
           {comida.map((item, index) => (
             <ItemFood
@@ -67,7 +66,8 @@ export default function Food() {
               checked2={cliente2.comida.includes(item)}
             />
           ))}
-          <div className="col-sm-12 d-flex justify-content-center my-3">
+          <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center my-3">
+            {errorName && <div className="text-danger">{errorName}</div>}
             <button
               style={{ backgroundColor: "green" }}
               onClick={handleConfirm}

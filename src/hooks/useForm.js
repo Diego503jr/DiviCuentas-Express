@@ -81,7 +81,7 @@ export const useForm = (initialForm, validationForm) => {
         localStorage.setItem("cliente1", JSON.stringify(clientes1));
         localStorage.setItem("cliente2", JSON.stringify(clientes2));
         setLoading(false);
-      }, 2000);
+      }, 1000);
     }
   };
 
@@ -90,17 +90,26 @@ export const useForm = (initialForm, validationForm) => {
     if (cliente1.comida.length === 0 && cliente2.comida.length === 0) {
       setErrorName("Debe seleccionar la comida para mostrar la cuenta");
     } else {
-      setLoading(true);
-      setTimeout(() => {
-        const comidaCliente1 = cliente1.comida;
-        const comidaCliente2 = cliente2.comida;
+      if (cliente1.comida.length === 0 || cliente2.comida.length === 0) {
+        setErrorName("Ambos clientes deben seleccionar comida");
+      } else {
+        setLoading(true);
+        setTimeout(() => {
+          const comidaCliente1 = cliente1.comida;
+          const comidaCliente2 = cliente2.comida;
 
-        localStorage.setItem("comidaCliente1", JSON.stringify(comidaCliente1));
-        localStorage.setItem("comidaCliente2", JSON.stringify(comidaCliente2));
-
-        navigate("/bills");
-        setLoading(false);
-      }, 1000);
+          localStorage.setItem(
+            "comidaCliente1",
+            JSON.stringify(comidaCliente1)
+          );
+          localStorage.setItem(
+            "comidaCliente2",
+            JSON.stringify(comidaCliente2)
+          );
+          navigate("/bills");
+          setLoading(false);
+        }, 1000);
+      }
     }
   };
 
@@ -114,7 +123,7 @@ export const useForm = (initialForm, validationForm) => {
       localStorage.removeItem("comidaCliente2");
       navigate("/");
       setLoading(false);
-    }, 3000);
+    }, 2000);
   };
 
   return {

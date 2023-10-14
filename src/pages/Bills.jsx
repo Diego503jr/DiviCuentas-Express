@@ -62,8 +62,12 @@ export default function Bills() {
           </div>
 
           <div className="col-sm-7 d-flex justify-content-center my-2">
-            <button className="btn btn-primary" onClick={handlePayment}>
-              <div className="fs-5 mx-4">Pagar</div>
+            <button
+              style={{ backgroundColor: "blue" }}
+              className="btn"
+              onClick={handlePayment}
+            >
+              <div className="fs-5 text-white mx-4">Pagar</div>
             </button>
           </div>
         </div>
