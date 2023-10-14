@@ -75,11 +75,11 @@ export const useForm = (initialForm, validationForm) => {
     if (isValidObjKey(errors) && isValidObjValue(form)) {
       setLoading(true);
       setTimeout(() => {
-        navigate("./menu");
         clientes1 = name1;
         clientes2 = name2;
         localStorage.setItem("cliente1", JSON.stringify(clientes1));
         localStorage.setItem("cliente2", JSON.stringify(clientes2));
+        navigate("./menu");
         setLoading(false);
       }, 1000);
     }
