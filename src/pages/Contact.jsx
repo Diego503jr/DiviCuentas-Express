@@ -54,11 +54,12 @@ export default function Contact() {
               Ingresa el asunto por el cual nos quieres contactar.
             </div>
             <button
+              style={{ backgroundColor: "green" }}
               onClick={(e) => {
                 e.preventDefault();
                 enviarEmail();
               }}
-              className="btn btn-success my-3 w-100"
+              className="btn my-3 text-white fw-bolder w-100"
             >
               Enviar
             </button>

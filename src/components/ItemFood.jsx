@@ -32,6 +32,7 @@ export default function ItemFood({
             <p className="fw-normal">{txt1}</p>
             <div className="d-flex">
               <Check
+                person={1}
                 id={id1}
                 name={name1}
                 value={value1}
@@ -39,6 +40,7 @@ export default function ItemFood({
                 checked={checked1}
               />
               <Check
+                person={2}
                 id={id2}
                 name={name2}
                 value={value2}

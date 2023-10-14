@@ -71,7 +71,12 @@ export default function Home() {
             <img
               src={promocion}
               alt={promocion}
-              className="img-fluid w-50 my-3"
+              className="img-fluid w-100 my-3 d-sm-none"
+            />
+            <img
+              src={promocion}
+              alt={promocion}
+              className="img-fluid w-50 my-3 d-none d-sm-flex"
             />
           </div>
         </div>

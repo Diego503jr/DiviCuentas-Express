@@ -27,8 +27,9 @@ export default function DesarrolloModal() {
           </div>
           <div className="modal-footer bg-body-secondary">
             <button
+              style={{ backgroundColor: "blue" }}
               type="button"
-              className="btn btn-primary"
+              className="btn text-white"
               data-bs-dismiss="modal"
             >
               Aceptar

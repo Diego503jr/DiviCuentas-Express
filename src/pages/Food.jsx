@@ -69,10 +69,11 @@ export default function Food() {
           ))}
           <div className="col-sm-12 d-flex justify-content-center my-3">
             <button
+              style={{ backgroundColor: "green" }}
               onClick={handleConfirm}
-              className="btn btn-success fs-5 fw-bold"
+              className="btn fs-5 fw-bolder"
             >
-              <div className="mx-4">Confirmar</div>
+              <div className="mx-4 text-white">Confirmar</div>
             </button>
           </div>
         </div>

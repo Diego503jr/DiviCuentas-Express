@@ -91,16 +91,18 @@ export const AcceptModal = () => {
             </div>
             <div className="modal-footer bg-body-secondary">
               <button
+                style={{ backgroundColor: "red" }}
                 type="button"
-                className="btn btn-danger"
+                className="btn text-white"
                 data-bs-dismiss="modal"
               >
                 Cancelar
               </button>
               <button
                 onClick={handleGetData}
+                style={{ backgroundColor: "green" }}
                 type="button"
-                className="btn btn-success"
+                className="btn text-white"
                 data-bs-dismiss="modal"
               >
                 Continuar

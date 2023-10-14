@@ -3,18 +3,10 @@
   z-index: 1600;
 }
 
-.background-green input[type="checkbox"]:checked {
+.check1:checked {
   background-color: green;
 }
 
-.background-blue input[type="checkbox"]:checked {
+.check2:checked {
   background-color: blue;
 }
-
-/* input[type="checkbox"][id="custom-green"]:checked {
-  background-color: green;
-}
-
-input[type="checkbox"][id="custom-blue"]:checked {
-  background-color: blue;
-} */
