@@ -26,7 +26,7 @@ export default function ItemFood({
             style={{ color: "#040100" }}
             className="col-sm-12 d-flex flex-column align-items-center mt-3"
           >
-            <img src={img1} alt={img1} className="img-fluid w-25" />
+            <img src={img1} alt={img1} className="img-fluid w-50" />
             <h3 className="fs-5 fw-bold">{title1}</h3>
             <i className="fs-6">{description1}</i>
             <p className="fw-normal">{txt1}</p>

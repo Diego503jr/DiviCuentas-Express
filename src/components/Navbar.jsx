@@ -43,7 +43,7 @@ export default function Navbar() {
                 aria-label="Close"
               ></button>
             </div>
-            <div class="offcanvas-body">
+            <div className="offcanvas-body">
               <button
                 onClick={(e) => {
                   e.preventDefault();

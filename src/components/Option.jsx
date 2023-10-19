@@ -12,7 +12,7 @@ export default function Option({
     <React.Fragment>
       <div className="d-flex d-sm-none col-sm-12 mt-3 mb-4">
         <div className="d-flex flex-column align-items-center">
-          <img src={img1} alt={img1} className="img-fluid w-25" />
+          <img src={img1} alt={img1} className="img-fluid w-50" />
           <h3 className="fs-5 fw-bold">{title1}</h3>
           <p className="fw-normal">{txt1}</p>
         </div>
@@ -35,7 +35,7 @@ export default function Option({
               style={{ color: "#040100" }}
               className="col-sm-12 d-flex flex-column align-items-center mt-3"
             >
-              <img src={img1} alt={img1} className="img-fluid w-25" />
+              <img src={img1} alt={img1} className="img-fluid w-50" />
               <h3 className="fs-5 fw-bold">{title1}</h3>
               <p className="fw-normal">{txt1}</p>
               <button

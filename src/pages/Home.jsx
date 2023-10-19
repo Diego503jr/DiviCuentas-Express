@@ -26,13 +26,26 @@ export default function Home() {
               style={{ color: "#040100", fontSize: "2.5rem" }}
               className="fw-bold lh-1  d-lg-none"
             >
-              Saborea innovación, paga sin complicación
+              <div className="d-flex justify-content-center flex-wrap">
+                Saborea <strong className="text-primary"> innovación,</strong>
+              </div>
+              <strong className="fw-light fst-italic fs-4 d-flex justify-content-center">
+                paga sin
+                <strong className="text-warning fw-bold"> complicación</strong>
+              </strong>
             </h1>
             <h1
               style={{ fontSize: "3.7rem", color: "#040100" }}
-              className="fw-bold lh-1 d-none d-lg-flex"
+              className="fw-bold lh-1 d-none d-lg-flex flex-column"
             >
-              Saborea innovación, paga sin complicación
+              <p>
+                Saborea
+                <strong className="text-primary"> innovación,</strong>
+              </p>
+              <strong className="fw-light fst-italic fs-4">
+                paga sin
+                <strong className="text-warning fw-bold"> complicación</strong>
+              </strong>
             </h1>
           </div>
           <div className="col-sm-6">
