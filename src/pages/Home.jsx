@@ -29,7 +29,7 @@ export default function Home() {
               <div className="d-flex justify-content-center flex-wrap">
                 Saborea <strong className="text-primary"> innovación,</strong>
               </div>
-              <strong className="fw-light fst-italic fs-4 d-flex justify-content-center">
+              <strong className="fw-light fst-italic fs-2 d-flex justify-content-center">
                 paga sin
                 <strong className="text-warning fw-bold"> complicación</strong>
               </strong>
@@ -42,7 +42,7 @@ export default function Home() {
                 Saborea
                 <strong className="text-primary"> innovación,</strong>
               </p>
-              <strong className="fw-light fst-italic fs-4">
+              <strong className="fw-light fst-italic fs-1">
                 paga sin
                 <strong className="text-warning fw-bold"> complicación</strong>
               </strong>
