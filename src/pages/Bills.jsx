@@ -24,6 +24,9 @@ export default function Bills() {
   const propina1 = totalCliente1 * 0.1;
   const propina2 = totalCliente2 * 0.1;
 
+  const totalPagarPropina1 = totalCliente1 + propina1;
+  const totalPagarPropina2 = totalCliente2 + propina2;
+
   const totalCombinado = totalCliente1 + totalCliente2;
 
   return (
@@ -47,11 +50,12 @@ export default function Bills() {
             style={{ color: "green" }}
             className="col-sm-7 fw-bold fs-3 my-2 d-flex justify-content-center flex-wrap"
           >
-            <div className="mx-5">
-              Total 1° persona: $ {totalCliente1.toFixed(2)}
-            </div>
+            <div className="mx-5">1° persona: $ {totalCliente1.toFixed(2)}</div>
             <div className="mx-5">Propina 10%: $ {propina1.toFixed(2)}</div>
           </div>
+          <p className="col-sm-7 fs-3 fw-bold">
+            Total a pagar con propina: $ {totalPagarPropina1.toFixed(2)}
+          </p>
           <h1 className="col-sm-7 d-flex justify-content-center border-4 border-black border-top">
             {name2}
           </h1>
@@ -66,11 +70,12 @@ export default function Bills() {
             style={{ color: "blue" }}
             className="col-sm-7 fw-bold fs-3 mt-2 d-flex justify-content-center flex-wrap"
           >
-            <div className="mx-5">
-              Total 2° persona: $ {totalCliente2.toFixed(2)}
-            </div>
+            <div className="mx-5">2° persona: $ {totalCliente2.toFixed(2)}</div>
             <div className="mx-5">Propina 10%: $ {propina2.toFixed(2)}</div>
           </div>
+          <p className="col-sm-7 fs-3 fw-bold">
+            Total a pagar con propina: $ {totalPagarPropina2.toFixed(2)}
+          </p>
           <div className="col-sm-7 d-flex justify-content-center border-4 border-black border-top my-2">
             <h1 className="mx-3 mt-3">Total a pagar: </h1>
             <h1 className="mx-3 mt-3">$ {totalCombinado.toFixed(2)}</h1>
