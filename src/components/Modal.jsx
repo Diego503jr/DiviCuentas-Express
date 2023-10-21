@@ -45,7 +45,7 @@ export const AcceptModal = () => {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">
+            <div style={{ backgroundColor: "#f5f5dc" }} className="modal-body">
               <div className="mb-3 mt-3">
                 <label
                   htmlFor="exampleFormControlInput1"

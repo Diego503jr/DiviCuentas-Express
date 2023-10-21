@@ -6,16 +6,21 @@ export default function Footer() {
 
   return (
     <footer
-      style={{ backgroundColor: "#E22717" }}
+      style={{ backgroundColor: "#FFA500" }}
       className="col-sm-12 d-flex align-items-center"
     >
       <div className="my-4 mx-4">
         <div className="row d-flex justify-content-center align-items-center">
-          <div className="col-sm-2">
+          <div className="col-sm-2 d-flex justify-content-center">
             <img
               src={logotipo}
               alt={logotipo}
-              className="img-fluid rounded-5"
+              className="img-fluid d-none d-sm-flex rounded-5"
+            />
+            <img
+              src={logotipo}
+              alt={logotipo}
+              className="img-fluid d-sm-none rounded-5 w-75"
             />
           </div>
           <div className="col-sm-6 d-flex justify-content-center">

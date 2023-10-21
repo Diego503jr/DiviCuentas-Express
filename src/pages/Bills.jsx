@@ -21,6 +21,9 @@ export default function Bills() {
     0
   );
 
+  const propina1 = totalCliente1 * 0.1;
+  const propina2 = totalCliente2 * 0.1;
+
   const totalCombinado = totalCliente1 + totalCliente2;
 
   return (
@@ -42,9 +45,12 @@ export default function Bills() {
           ))}
           <div
             style={{ color: "green" }}
-            className="col-sm-7 fw-bold fs-3 my-2"
+            className="col-sm-7 fw-bold fs-3 my-2 d-flex justify-content-center flex-wrap"
           >
-            Total 1° persona: $ {totalCliente1.toFixed(2)}
+            <div className="mx-5">
+              Total 1° persona: $ {totalCliente1.toFixed(2)}
+            </div>
+            <div className="mx-5">Propina 10%: $ {propina1.toFixed(2)}</div>
           </div>
           <h1 className="col-sm-7 d-flex justify-content-center border-4 border-black border-top">
             {name2}
@@ -56,8 +62,14 @@ export default function Bills() {
               priceFood={parseFloat(item.price).toFixed(2)}
             />
           ))}
-          <div style={{ color: "blue" }} className="col-sm-7 fw-bold fs-3 mt-2">
-            Total 2° persona: $ {totalCliente2.toFixed(2)}
+          <div
+            style={{ color: "blue" }}
+            className="col-sm-7 fw-bold fs-3 mt-2 d-flex justify-content-center flex-wrap"
+          >
+            <div className="mx-5">
+              Total 2° persona: $ {totalCliente2.toFixed(2)}
+            </div>
+            <div className="mx-5">Propina 10%: $ {propina2.toFixed(2)}</div>
           </div>
           <div className="col-sm-7 d-flex justify-content-center border-4 border-black border-top my-2">
             <h1 className="mx-3 mt-3">Total a pagar: </h1>

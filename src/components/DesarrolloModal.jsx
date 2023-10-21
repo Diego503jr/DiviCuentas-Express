@@ -22,7 +22,7 @@ export default function DesarrolloModal() {
               aria-label="Close"
             ></button>
           </div>
-          <div className="modal-body">
+          <div style={{ backgroundColor: "#f5f5dc" }} className="modal-body">
             Esta opción aún no esta disponible. :'C
           </div>
           <div className="modal-footer bg-body-secondary">

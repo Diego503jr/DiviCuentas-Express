@@ -36,7 +36,7 @@ export default function PromoModal() {
               aria-label="Close"
             ></button>
           </div>
-          <div className="modal-body">
+          <div style={{ backgroundColor: "#f5f5dc" }} className="modal-body">
             Estimado Usuario,
             <hr />
             <p>

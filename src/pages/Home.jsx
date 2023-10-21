@@ -44,12 +44,16 @@ export default function Home() {
               </p>
               <strong className="fw-light fst-italic fs-1">
                 paga sin
-                <strong className="text-warning fw-bold"> complicación</strong>
+                <strong className="text-danger fw-bold"> complicación</strong>
               </strong>
             </h1>
           </div>
-          <div className="col-sm-6">
-            <img src={amigos} alt={amigos} className="img-fluid" />
+          <div className="col-sm-6 d-flex justify-content-center">
+            <img
+              src={amigos}
+              alt={amigos}
+              className="img-fluid rounded rounded-5 w-75"
+            />
           </div>
           <Div>En Cuanto quisieras dividir</Div>
           <Option

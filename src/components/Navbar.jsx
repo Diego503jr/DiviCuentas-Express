@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <React.Fragment>
       <nav
-        style={{ backgroundColor: "#E22717" }}
+        style={{ backgroundColor: "#FFA500" }}
         className="col-sm-12 navbar navbar-expand-lg d-sm-none"
       >
         <div className="container-fluid">
@@ -91,7 +91,7 @@ export default function Navbar() {
         </div>
       </nav>
       <nav
-        style={{ backgroundColor: "#E22717" }}
+        style={{ backgroundColor: "#FFA500" }}
         className="col-sm-12 navbar navbar-expand-lg d-none d-sm-flex"
       >
         <div className="container-fluid">

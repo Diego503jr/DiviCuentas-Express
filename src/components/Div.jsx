@@ -8,7 +8,7 @@ export default function Div({ children, empty }) {
     ></div>
   ) : (
     <div
-      style={{ backgroundColor: "#E22717" }}
+      style={{ backgroundColor: "#FFA500" }}
       className="text-white fw-bold text-uppercase col-sm-12 fs-2 d-flex justify-content-center"
     >
       {children}
