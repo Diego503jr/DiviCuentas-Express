@@ -15,7 +15,7 @@ export default function Option({
           <img
             src={img1}
             alt={img1}
-            className="img-fluid w-50 rounded rounded-5"
+            className="img-fluid w-25 rounded rounded-5"
           />
           <h3 className="fs-5 fw-bold">{title1}</h3>
           <p className="fw-normal">{txt1}</p>
@@ -42,7 +42,7 @@ export default function Option({
               <img
                 src={img1}
                 alt={img1}
-                className="img-fluid w-50 rounded rounded-5"
+                className="img-fluid w-25 rounded rounded-5"
               />
               <h3 className="fs-5 fw-bold">{title1}</h3>
               <p className="fw-normal">{txt1}</p>
