@@ -27,8 +27,7 @@ export default function Bills() {
   const totalPagarPropina1 = totalCliente1 + propina1;
   const totalPagarPropina2 = totalCliente2 + propina2;
 
-  const totalCombinado =
-    totalCliente1 + totalCliente2 + totalPagarPropina1 + totalPagarPropina2;
+  const totalCombinado = totalPagarPropina1 + totalPagarPropina2;
 
   return (
     <React.Fragment>
