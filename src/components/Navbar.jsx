@@ -13,7 +13,7 @@ export default function Navbar() {
         className="col-sm-12 navbar navbar-expand-lg d-sm-none"
       >
         <div className="container-fluid">
-          <img src={logotipo} alt="logo lili-app" className="img-fluid w-50" />
+          <h1 className="text-white">DiviCuentas Express</h1>
           <button
             className="navbar-toggler border-0 focus-ring focus-ring-light"
             type="button"
@@ -95,7 +95,11 @@ export default function Navbar() {
         className="col-sm-12 navbar navbar-expand-lg d-none d-sm-flex"
       >
         <div className="container-fluid">
-          <img src={logotipo} alt={logotipo} className="img-fluid w-25" />
+          <h1 className="text-white d-flex flex-column align-items-center">
+            <div className="">DiviCuentas</div>
+            <div className="">Express</div>
+          </h1>
+
           <form className="d-flex" role="search">
             <button
               onClick={(e) => {
